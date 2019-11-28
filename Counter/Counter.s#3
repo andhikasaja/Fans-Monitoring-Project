@@ -7124,14 +7124,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.762" drill="0">
-<clearance class="0" value="0.381"/>
+<class number="0" name="default" width="1.27" drill="0">
+<clearance class="0" value="0.762"/>
 </class>
-<class number="1" name="VCC" width="1.016" drill="0">
-<clearance class="0" value="0.381"/>
+<class number="1" name="VCC" width="1.524" drill="0">
+<clearance class="0" value="0.762"/>
 </class>
-<class number="2" name="GND" width="1.016" drill="0">
-<clearance class="0" value="0.381"/>
+<class number="2" name="GND" width="1.524" drill="0">
+<clearance class="0" value="0.762"/>
 </class>
 </classes>
 <parts>
