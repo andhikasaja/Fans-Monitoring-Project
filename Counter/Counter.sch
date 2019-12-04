@@ -6006,14 +6006,14 @@ LED</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="1.27" drill="0">
-<clearance class="0" value="0.762"/>
+<class number="0" name="default" width="1.016" drill="0">
+<clearance class="0" value="1.016"/>
 </class>
-<class number="1" name="VCC" width="1.524" drill="0">
-<clearance class="0" value="0.762"/>
+<class number="1" name="VCC" width="1.27" drill="0">
+<clearance class="0" value="1.016"/>
 </class>
-<class number="2" name="GND" width="1.524" drill="0">
-<clearance class="0" value="0.762"/>
+<class number="2" name="GND" width="1.27" drill="0">
+<clearance class="0" value="1.016"/>
 </class>
 </classes>
 <parts>
@@ -6027,8 +6027,8 @@ LED</description>
 <part name="R_LDR1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="10k"/>
 <part name="U$2" library="Evllve PCB Array" library_urn="urn:adsk.eagle:library:14885710" deviceset="VCC" device=""/>
 <part name="GND1" library="PulseOximeterECG_AU" library_urn="urn:adsk.eagle:library:14846661" deviceset="GND" device=""/>
-<part name="FUSE" library="special" library_urn="urn:adsk.eagle:library:367" deviceset="FUSE" device="" package3d_urn="urn:adsk.eagle:package:26650/1"/>
-<part name="ON/OFF" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:39353/1"/>
+<part name="FUSE" library="special" library_urn="urn:adsk.eagle:library:367" deviceset="FUSE" device="" package3d_urn="urn:adsk.eagle:package:26650/1" value="1 AMP"/>
+<part name="ON/OFF" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:39353/1" value="GREEN"/>
 <part name="R_LED" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="330"/>
 </parts>
 <sheets>
@@ -6037,9 +6037,9 @@ LED</description>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="66.04" y="53.34" smashed="yes"/>
-<instance part="R_LASER" gate="G$1" x="-10.16" y="20.32" smashed="yes" rot="R90">
-<attribute name="NAME" x="-11.6586" y="16.51" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-6.858" y="16.51" size="1.778" layer="96" rot="R90"/>
+<instance part="R_LASER" gate="G$1" x="-15.24" y="30.48" smashed="yes" rot="R180">
+<attribute name="NAME" x="-11.43" y="28.9814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-11.43" y="33.782" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R_LDR" gate="G$1" x="-10.16" y="48.26" smashed="yes" rot="R90">
 <attribute name="NAME" x="-11.6586" y="44.45" size="1.778" layer="95" rot="R90"/>
@@ -6088,49 +6088,43 @@ LED</description>
 <attribute name="NAME" x="-25.4" y="17.78" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-25.4" y="11.43" size="1.778" layer="96"/>
 </instance>
-<instance part="ON/OFF" gate="G$1" x="-81.28" y="15.24" smashed="yes">
-<attribute name="NAME" x="-84.709" y="10.668" size="1.778" layer="95" font="vector" rot="R90"/>
-<attribute name="VALUE" x="-79.375" y="10.668" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+<instance part="ON/OFF" gate="G$1" x="-58.42" y="48.26" smashed="yes" rot="MR90">
+<attribute name="NAME" x="-62.992" y="44.831" size="1.778" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="-62.992" y="50.165" size="1.778" layer="96" font="vector" rot="MR180" align="top-left"/>
 </instance>
-<instance part="R_LED" gate="G$1" x="-81.28" y="25.4" smashed="yes" rot="R90">
-<attribute name="NAME" x="-82.7786" y="21.59" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-77.978" y="21.59" size="1.778" layer="96" rot="R90"/>
+<instance part="R_LED" gate="G$1" x="-48.26" y="48.26" smashed="yes" rot="MR180">
+<attribute name="NAME" x="-52.07" y="46.7614" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="-52.07" y="51.562" size="1.778" layer="96" rot="MR180"/>
 </instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="N$2" class="0">
-<segment>
-<pinref part="R_LASER" gate="G$1" pin="2"/>
-<pinref part="LASER" gate="-2" pin="KL"/>
-<wire x1="-35.56" y1="25.4" x2="-10.16" y2="25.4" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="VCC" class="1">
 <segment>
 <pinref part="VCC_GND" gate="-1" pin="KL"/>
 <pinref part="U$2" gate="G$1" pin="VCC"/>
 <junction x="-35.56" y="15.24"/>
-<wire x1="-27.94" y1="15.24" x2="-35.56" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="15.24" x2="-30.48" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="FUSE" gate="G$1" pin="1"/>
 <pinref part="R_LED" gate="G$1" pin="2"/>
-<wire x1="-81.28" y1="30.48" x2="-68.58" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="30.48" x2="-68.58" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="15.24" x2="-35.56" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="15.24" x2="-35.56" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="48.26" x2="-30.48" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="48.26" x2="-30.48" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-30.48" y="15.24"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="LDR" gate="-2" pin="KL"/>
-<wire x1="-35.56" y1="55.88" x2="-10.16" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="R_LDR" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="53.34" x2="27.94" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="53.34" x2="27.94" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="A0"/>
 <wire x1="27.94" y1="71.12" x2="45.72" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="-10.16" y1="55.88" x2="-10.16" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-10.16" y="53.34"/>
+<pinref part="LDR" gate="-1" pin="KL"/>
+<wire x1="-35.56" y1="60.96" x2="-10.16" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="60.96" x2="-10.16" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="1">
@@ -6138,29 +6132,28 @@ LED</description>
 <pinref part="VCC_GND" gate="-2" pin="KL"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <junction x="-35.56" y="10.16"/>
-<wire x1="-35.56" y1="10.16" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="10.16" x2="-12.7" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="GND@2"/>
-<wire x1="17.78" y1="10.16" x2="40.64" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="10.16" x2="7.62" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="10.16" x2="40.64" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="10.16" x2="40.64" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="38.1" x2="45.72" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="LDR" gate="-1" pin="KL"/>
-<wire x1="-35.56" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="60.96" x2="17.78" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="35.56" x2="17.78" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="33.02" x2="-7.62" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="33.02" x2="-7.62" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="30.48" x2="-20.32" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="LASER" gate="-1" pin="KL"/>
-<wire x1="-35.56" y1="30.48" x2="-20.32" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="35.56" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
-<junction x="17.78" y="35.56"/>
-<junction x="17.78" y="10.16"/>
 <pinref part="PUSHBUTTON" gate="-2" pin="KL"/>
 <wire x1="-35.56" y1="-2.54" x2="40.64" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="-2.54" x2="40.64" y2="10.16" width="0.1524" layer="91"/>
 <junction x="40.64" y="10.16"/>
 <pinref part="ON/OFF" gate="G$1" pin="C"/>
-<wire x1="-81.28" y1="10.16" x2="-35.56" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="48.26" x2="-68.58" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="48.26" x2="-68.58" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="10.16" x2="-35.56" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="LASER" gate="-2" pin="KL"/>
+<wire x1="-35.56" y1="25.4" x2="-12.7" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="25.4" x2="-12.7" y2="10.16" width="0.1524" layer="91"/>
+<junction x="-12.7" y="10.16"/>
+<pinref part="LDR" gate="-2" pin="KL"/>
+<wire x1="-35.56" y1="55.88" x2="7.62" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="10.16" x2="7.62" y2="55.88" width="0.1524" layer="91"/>
+<junction x="7.62" y="10.16"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -6177,31 +6170,39 @@ LED</description>
 <wire x1="93.98" y1="71.12" x2="86.36" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="1">
-<segment>
-<wire x1="2.54" y1="15.24" x2="-10.16" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="15.24" x2="45.72" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VIN"/>
-<wire x1="45.72" y1="15.24" x2="45.72" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="R_LASER" gate="G$1" pin="1"/>
-<junction x="-10.16" y="15.24"/>
-<pinref part="R_LDR" gate="G$1" pin="1"/>
-<wire x1="-10.16" y1="43.18" x2="2.54" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="43.18" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
-<junction x="2.54" y="15.24"/>
-<pinref part="R_LDR1" gate="G$1" pin="1"/>
-<wire x1="-20.32" y1="2.54" x2="45.72" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="2.54" x2="45.72" y2="15.24" width="0.1524" layer="91"/>
-<junction x="45.72" y="15.24"/>
-<wire x1="-10.16" y1="15.24" x2="-15.24" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="FUSE" gate="G$1" pin="2"/>
-</segment>
-</net>
 <net name="N$5" class="0">
 <segment>
 <pinref part="R_LED" gate="G$1" pin="1"/>
 <pinref part="ON/OFF" gate="G$1" pin="A"/>
-<wire x1="-81.28" y1="20.32" x2="-81.28" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="48.26" x2="-55.88" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="LASER" gate="-1" pin="KL"/>
+<pinref part="R_LASER" gate="G$1" pin="2"/>
+<wire x1="-35.56" y1="30.48" x2="-20.32" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="1">
+<segment>
+<pinref part="R_LDR" gate="G$1" pin="1"/>
+<wire x1="2.54" y1="15.24" x2="2.54" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="43.18" x2="-10.16" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="15.24" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="VIN"/>
+<wire x1="2.54" y1="15.24" x2="45.72" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="15.24" x2="45.72" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="R_LDR1" gate="G$1" pin="1"/>
+<wire x1="-20.32" y1="2.54" x2="45.72" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="2.54" x2="45.72" y2="15.24" width="0.1524" layer="91"/>
+<junction x="45.72" y="15.24"/>
+<pinref part="FUSE" gate="G$1" pin="2"/>
+<wire x1="-15.24" y1="15.24" x2="-10.16" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="R_LASER" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="30.48" x2="-10.16" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-10.16" y="15.24"/>
+<junction x="2.54" y="15.24"/>
 </segment>
 </net>
 </nets>

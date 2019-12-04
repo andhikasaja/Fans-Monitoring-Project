@@ -27,6 +27,8 @@ byte ldr= A0;
 int  nilai;
 int things;
 int count=0;
+int pushbutton = D0;
+
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -114,5 +116,11 @@ int numr = c;
 itoa(numr, cstr, 10);
 
   client.publish("FANS/mesin/counter",cstr);
+
+  if(digitalRead(pushbutton) == LOW) // When button pressed
+  {
+    count = 0; // Set counter to 0
+  }
+delay(200);
 
 }
